@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Trebuchet MS", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Sleek Interface color palette mapped to variables */
+  --color-primary: #FF6B35;
+  --color-secondary: #FFFFFF;
+  --color-accent: #FFC107;
+  --color-success: #10B981;
+  --color-slate-100: rgba(255, 255, 255, 0.08);
+}
+
+:root {
+  --primary: #FF6B35;
+  --secondary: #FFFFFF;
+  --accent: #FFC107;
+  --success: #10B981;
+  --bg: #090D16;
+  --surface: #111625;
+  --text-main: #F3F4F6;
+  --text-muted: #94A3B8;
+  --font-heading: 'Trebuchet MS', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg) !important;
+  color: var(--text-main) !important;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Custom fine-grain typography settings to match Sleek dark theme */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #FFFFFF !important;
+}
+
+/* Ensure global scrollbars are styled elegantly for dark content */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Advanced dark-theme overrides for solid white background helpers and borders */
+body, #root {
+  background-color: var(--bg) !important;
+  color: var(--text-main);
+}
+
+/* Override tailwind default colors transparently to align with Sleek Dark */
+.bg-white {
+  background-color: var(--surface) !important;
+}
+
+.bg-gray-50, .bg-slate-50, .bg-gray-100, .bg-slate-100, .bg-zinc-50 {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.text-gray-950, .text-gray-900, .text-gray-800, .text-slate-900, .text-slate-800, .text-slate-700, .text-gray-700 {
+  color: var(--text-main) !important;
+}
+
+.text-gray-500, .text-gray-400, .text-slate-500, .text-slate-400 {
+  color: var(--text-muted) !important;
+}
+
+.border-gray-100, .border-slate-100, .border-slate-200, .border-gray-200, .border-gray-50 {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Forms & Inputs styling inside dark environments */
+input, select, textarea {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary) !important;
+  outline: none;
+}
+
+/* Base custom classes derived from Sleek Theme HTML */
+.sleek-card {
+  background: var(--surface) !important;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.sleek-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 107, 53, 0.3) !important;
+}
+
+.sleek-input-bar {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+.sleek-category-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sleek-category-circle:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 107, 53, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.1);
+}
+
+.sleek-badge {
+  background: var(--primary);
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border: 2px solid var(--surface);
+}
+
+.sleek-icon-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #FFFFFF !important;
+}
+
+/* Custom transitions and interactive feedback for Sleek buttons */
+.sleek-btn-primary {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.sleek-btn-primary:hover {
+  opacity: 0.92;
+}
+
+.sleek-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  color: white !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.sleek-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}

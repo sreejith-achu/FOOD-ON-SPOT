@@ -1,0 +1,10 @@
+{
+  "name": "Food On Spot",
+  "description": "A complete, production-ready multi-vendor food delivery marketplace with custom customer, restaurant, delivery partner, and super admin interfaces, powered by Gemini smart food recommendations.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
